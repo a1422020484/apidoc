@@ -70,6 +70,7 @@ public class HelloJsonServlet extends HttpServlet {
 				mybaticPathName = (String) logicMap.get("name");
 			}
 			if ("".equals(mybaticPathName) || mybaticPathName.isEmpty()) {
+				request.getRequestDispatcher("/template/error.ftl").forward(request, response);
 				throw new Exception("logic不包含mybatis方法");
 			} else {
 //				userInfo = myBatisJson.getUser(mybaticPathName);
