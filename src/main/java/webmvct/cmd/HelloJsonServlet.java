@@ -47,6 +47,10 @@ public class HelloJsonServlet extends HttpServlet {
 		String method = "get";
 		String url = request.getServletPath();
 		System.out.println(url);
+		if("/".equals(url)){
+			request.getRequestDispatcher("/template/default.ftl").forward(request, response);
+			return;
+		}else{
 		Map<String, String> logicMap = null;
 		List<Map> userInfo = null;
 		String mybaticPathName = "";
@@ -68,7 +72,7 @@ public class HelloJsonServlet extends HttpServlet {
 			if ("".equals(mybaticPathName) || mybaticPathName.isEmpty()) {
 				throw new Exception("logic不包含mybatis方法");
 			} else {
-				userInfo = myBatisJson.getUser(mybaticPathName);
+//				userInfo = myBatisJson.getUser(mybaticPathName);
 			}
 			if(map.get("templete")==null||"".equals(map.get("templete"))){
 				throw new Exception("未找到合适的模板templete");
@@ -83,7 +87,7 @@ public class HelloJsonServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 
-		
+		}
 	}
 
 	/**

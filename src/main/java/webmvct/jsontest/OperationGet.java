@@ -61,7 +61,7 @@ public class OperationGet {
                 	}else if("templete".equals(operation)){
                 		String templeteObj = operationObj.getString(operation);
                 		if(templeteObj!=null&&templeteObj.length()>0){
-                			map.put("responses", templeteObj);
+                			map.put("templete", templeteObj);
                 		}
                 	}
                 }

@@ -8,7 +8,7 @@
 <table>
 	<#if OperationMap2?exists>
                 <#list OperationMap2  as OperationMapSecond> 
-                   <tr>		<#--属性值区分大小写-->
+                   <tr>		<#--属性值区分大小写  map-->
                            <td style="color:red">PHONE:${OperationMapSecond.PHONE}</td>
                            <td>ADDRESS:${OperationMapSecond.ADDRESS}</td>
                            <td>USERNAME:${OperationMapSecond.USERNAME}</td>
@@ -17,6 +17,7 @@
         		</#list>
    </#if>
 	<#if OperationMap?exists>
+				<#--list<map>-->
                 <#list OperationMap?keys as key> 
                    <tr>
                    		<td>${key}
@@ -27,6 +28,13 @@
 					                   	<td>${OperationMapSecond}</td>		
 				                   </tr>
 				        		</#list>
+			        	  </#if>
+			        	  <#--map {key:value}-->
+                           <#if key="templete">
+				                   <tr>
+					                   <td>${key}</td>
+					                   	<td>${OperationMap.templete}</td>		
+				                   </tr>
 			        	  </#if>
 			        	  <#if key="logic">
 	                           <#list OperationMap[key] as key,OperationMapSecond> 

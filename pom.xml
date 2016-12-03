@@ -8,13 +8,24 @@
   
 
 	
-  <repositories>  
+ <!--  <repositories>  
     <repository>  
       <id>jcenter-release</id>  
       <name>jcenter</name>  
       <url>http://172.17.6.34:8081/nexus/content/groups/public/</url>  
     </repository>  
-</repositories> 
+</repositories>  -->
+<repositories>  
+    <repository>  
+      <id>central</id>  
+      <name>Central Repository</name>  
+      <url>http://repo.maven.apache.org/maven2</url>  
+      <layout>default</layout>  
+      <snapshots>  
+        <enabled>false</enabled>  
+      </snapshots>  
+    </repository>  
+  </repositories>  
   <dependencies>  
 		<dependency>  
 		    <groupId>com.mangofactory</groupId>  
